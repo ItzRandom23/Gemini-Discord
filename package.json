@@ -1,0 +1,34 @@
+{
+  "name": "gemini-discord",
+  "version": "0.1.0",
+  "description": "A powerful Discord bot that integrates Google Gemini.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "dependencies": {
+    "discord.js": "^14.16.2",
+    "@google/generative-ai": "^0.20.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "keywords": [
+    "discord-bot",
+    "google",
+    "gemini",
+    "discord",
+    "bot"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ItzRandom/Gemini-Discord"
+  },
+  "bugs": {
+    "url": "https://github.com/ItzRandom/Gemini-Discord/issues"
+  },
+  "homepage": "https://github.com/ItzRandom/Gemini-Discord#readme",
+  "author": "Itz Random",
+  "license": "MIT"
+}
