@@ -1,12 +1,16 @@
 const { Client, GatewayIntentBits, Partials } = require("discord.js");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
-if (!API_KEY || !BOT_TOKEN || !CHANNEL_ID) {
+const API = ""; 
+const BOT_TOKEN = "";
+const CHANNELID = "";
+
+if (!API || !BOT_TOKEN || !CHANNELID) {
   console.error("Missing required environment variables.");
   process.exit(1);
 }
 
-const ai = new GoogleGenerativeAI(""); // API KEY HERE
+const ai = new GoogleGenerativeAI(API); 
 const model = ai.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 const client = new Client({
@@ -23,10 +27,10 @@ client.once("ready", () => {
   console.log(`Logged in as ${client.user.tag}`);
 });
 
-client.login(""); // BOT TOKEN HERE
+client.login(BOT_TOKEN); 
 
 client.on("messageCreate", async (message) => {
-  if (message.author.bot || message.channel.id !== "") return; // CHANNEL ID HERE
+  if (message.author.bot || message.channel.id !== CHANNELID) return;
 
   const userMessage = message.content.trim();
   if (!userMessage) return;
@@ -35,10 +39,10 @@ client.on("messageCreate", async (message) => {
     await message.channel.sendTyping();
 
     const { response } = await model.generateContent(userMessage);
-    const generatedText = response?.text?.trim() || "";
-
+    const generatedText = response.text().trim();
     if (!generatedText) {
-      return message.reply("I have nothing to say.");
+      message.reply("I have nothing to say.");
+      return;
     }
 
     if (generatedText.includes("Response was blocked due to SAFETY")) {
