@@ -1,4 +1,4 @@
-# Gemini-Discord<center><img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=Gemini&fontSize=80&fontAlignY=35&animation=twinkling&fontColor=gradient" /></center>
+<center><img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=Gemini&fontSize=80&fontAlignY=35&animation=twinkling&fontColor=gradient" /></center>
 
 A powerful Discord bot that integrates Google Gemini. This bot allows users to interact with Gemini directly in their Discord servers.
 
